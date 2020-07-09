@@ -27,6 +27,7 @@ $correlationValue = $p.ExternalID;
 
 Try {
     If (Test-Path $db) {
+        #Do not execute when running preview
         if (-Not($dryRun -eq $True)) {  
             $create = $True;
 
