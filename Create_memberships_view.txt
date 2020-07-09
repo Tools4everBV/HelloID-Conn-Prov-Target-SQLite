@@ -1,0 +1,11 @@
+CREATE VIEW v_memberships 
+AS 
+SELECT 
+u.displayName as 'Account', 
+u.userName as 'UserName', 
+u.title as 'Job Title', 
+u.department as 'Department',
+g.group_name as 'Membership'
+FROM users u
+INNER JOIN memberships m ON m.user_id = u.externalId
+INNER JOIN groups g ON g.group_id = m.group_id
